@@ -18,6 +18,10 @@ RUN (cd ${HOME}; git clone https://github.com/gpakosz/.tmux.git) && \
     (cd ${HOME}; ln -s -f .tmux/.tmux.conf) && \
     (cd ${HOME}; cp .tmux/.tmux.conf.local .)
 
+USER 0
+RUN chgrp -R 0 /home && chmod -R g=u /home
+USER 10001
+
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD ["tail", "-f", "/dev/null"]
 
