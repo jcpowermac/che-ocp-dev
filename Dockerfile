@@ -1,4 +1,4 @@
-FROM golang:1.14-buster
+FROM golang:1.15-buster
 USER 0
 # Set permissions on /etc/passwd and /home to allow arbitrary users to write
 COPY --chown=0:0 entrypoint.sh /
