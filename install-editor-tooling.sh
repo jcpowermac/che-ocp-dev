@@ -10,7 +10,7 @@
 
 set -e
 
-TOOLING=(vim tmux zsh curl zip wget bash-completion jq xz-utils gettext-base libvirt-dev)
+TOOLING=(vim tmux zsh curl zip wget bash-completion jq xz-utils gettext-base libvirt-dev libvirt0)
 
 if command -v dnf 2> /dev/null; then
   dnf install -y "${TOOLING[@]}"
